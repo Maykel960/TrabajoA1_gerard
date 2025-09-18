@@ -1,9 +1,15 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+import java.io.File;
+
+public class Main{
+
+    void leerDirectorio(File f){
+
+        File[] leer = f.listFiles();
+        for (int i = 0; i < leer.length ; i++) {
+            System.out.println(leer[i]);
+        }
+    }
     public static void main(String[] args) {
-        System.out.println("Inicio");
-        int a = 0; //jghgj
-        int b = 1;
+
     }
 }
