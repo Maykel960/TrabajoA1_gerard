@@ -12,7 +12,7 @@ public class Main {
                     "3. Escribir contenido en un archivo de texto existente.\n" +
                     "4. Eliminar un archivo o directorio.\n" +
                     "5. Comprobar si un archivo o directorio existe en la ruta proporcionada.\n" +
-                    "6. Listar el contenido de un directorio.");
+                    "6. Listar el contenido de un directorio");
 
             int op = scanner.nextInt();
             switch (op) {
