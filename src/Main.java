@@ -4,5 +4,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Inicio");
         int a = 0; //jghgj
+        int b = 1;
     }
 }
