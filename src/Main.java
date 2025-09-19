@@ -13,6 +13,11 @@ public class Main {
             System.out.println(leer[i]);
         }
     }
+
+    void comprobarDirectorio(File f){
+
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
