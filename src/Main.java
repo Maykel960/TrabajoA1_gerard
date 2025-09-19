@@ -12,7 +12,9 @@ public class Main {
                     "3. Escribir contenido en un archivo de texto existente.\n" +
                     "4. Eliminar un archivo o directorio.\n" +
                     "5. Comprobar si un archivo o directorio existe en la ruta proporcionada.\n" +
-                    "6. Listar el contenido de un directorio");
+                    "6. Listar el contenido de un directorio\n"+
+                    "7. Salir del programa\n");
+
 
             int op = scanner.nextInt();
             switch (op) {
@@ -34,6 +36,9 @@ public class Main {
                 case 6:
                     System.out.println("Listar el contenido de un directorio");
                     break;
+                case 7 :
+                    System.out.println("Adíos");
+                    return;
                 default:
                     System.out.println("Opción no válida, intenta de nuevo");
                     return;
