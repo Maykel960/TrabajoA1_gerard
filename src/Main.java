@@ -1,15 +1,13 @@
 import java.io.File;
+import java.io.IOException;
 
 public class Main{
-
-    void leerDirectorio(File f){
-
-        File[] leer = f.listFiles();
-        for (int i = 0; i < leer.length ; i++) {
-            System.out.println(leer[i]);
+    static boolean crearDirectorio(String nombre) throws IOException {
+        File file = new File(nombre);
+        if (file.createNewFile()){
+            return true;
+        } else {
+            return false;
         }
-    }
-    public static void main(String[] args) {
-
     }
 }
