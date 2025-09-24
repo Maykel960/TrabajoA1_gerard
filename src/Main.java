@@ -1,14 +1,20 @@
 import java.io.File;
+import java.util.*;
 
 public class Main{
 
-    void leerDirectorio(File f){
 
-        File[] leer = f.listFiles();
-        for (int i = 0; i < leer.length ; i++) {
-            System.out.println(leer[i]);
+    void listarContenido(File file){
+
+        String[] listado = file.list();
+        if (file.isDirectory()){
+            for (int i = 0; i < file.length() ; i++) {
+                System.out.println(listado[i]);
+            }
         }
+        System.out.println(file);
     }
+
     public static void main(String[] args) {
 
     }
