@@ -6,7 +6,7 @@ import java.io.File;
 public class Main{
 
 
-    static boolean crearDirectorio(String nombre) throws IOException {
+    static boolean crearArchivo(String nombre) throws IOException {
         File file = new File(nombre);
         if (file.createNewFile()){
             return true;
@@ -14,11 +14,11 @@ public class Main{
             return false;
         }
     }
-    void listarContenido(File file){
+    static void listarContenido(File file){
 
         String[] listado = file.list();
         if (file.isDirectory()){
-            for (int i = 0; i < file.length() ; i++) {
+            for (int i = 0; i < listado.length ; i++) {
                 System.out.println(listado[i]);
             }
         }
@@ -68,7 +68,17 @@ public class Main{
             scanner.nextLine();
             switch (op) {
                 case 1:
-                    System.out.println("creación de archivo o directorio");
+                    System.out.println("Nombre del archivo a crear");
+                    try{
+                        String ruta = scanner.nextLine();
+                        if(crearArchivo(ruta)){
+                            System.out.println("Archivo creado correctamente");
+                        }else{
+                            System.out.println("El archivo no se ha podido crear");
+                        }
+                    }catch (Exception e){
+                        System.out.println("Error al crear archivo");
+                    }
                     break;
                 case 2:
                     System.out.println("Escribir contenido en un archivo de texto");
@@ -93,7 +103,8 @@ public class Main{
                     comprobarDirectorio(scanner.nextLine());
                     break;
                 case 6:
-                    System.out.println("Listar el contenido de un directorio");
+                    System.out.println("Introduce la ruta del directorio a listar");
+                    listarContenido(new File(scanner.nextLine()));
                     break;
                 case 7 :
                     System.out.println("Adíos");
