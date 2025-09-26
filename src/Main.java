@@ -2,8 +2,7 @@
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.File;
@@ -34,18 +33,11 @@ public class Main {
 
     }
 
-
-    public static void listarContenido(String file) {
-        File archivo = new File(file);
-        String[] listado = archivo.list();
-        if (archivo.isDirectory() && listado != null) {
-            for (int i = 0; i < listado.length; i++) {
-
-    static void listarContenido(File file){
+    static void listarContenido(File file) {
 
         String[] listado = file.list();
-        if (file.isDirectory()){
-            for (int i = 0; i < listado.length ; i++) {
+        if (file.isDirectory()) {
+            for (int i = 0; i < listado.length; i++) {
 
                 System.out.println(listado[i]);
             }
@@ -110,7 +102,7 @@ public class Main {
                 switch (op) {
                     case 1:
                         System.out.println("creación de archivo o directorio");
-                        crearDirectorio(scanner.nextLine());
+                        crearArchivo(scanner.nextLine());
                         break;
                     case 2:
                         System.out.println("Leer Contenido de un archivo");
@@ -138,7 +130,7 @@ public class Main {
                         break;
                     case 6:
                         System.out.println("Listar el contenido de un directorio");
-                        listarContenido(scanner.nextLine());
+                        listarContenido(new File(scanner.nextLine()));
                         break;
                     case 7:
                         System.out.println("Adíos");
@@ -147,8 +139,11 @@ public class Main {
                         System.out.println("Opción no válida, intenta de nuevo");
                         return;
                 }
-            } catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("Pon un comando válido joder");
                 return;
-  
-    
+
+            }
+        }
+    }
+}
