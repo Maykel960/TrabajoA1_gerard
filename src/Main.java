@@ -10,7 +10,7 @@ import java.io.File;
 
 public class Main {
 
-    static boolean crearDirectorio(String nombre) throws IOException {
+    static boolean crearArchivo(String nombre) throws IOException {
         File file = new File(nombre);
         if (nombre.contains(".")) {
             file.createNewFile();
@@ -34,11 +34,19 @@ public class Main {
 
     }
 
+
     public static void listarContenido(String file) {
         File archivo = new File(file);
         String[] listado = archivo.list();
         if (archivo.isDirectory() && listado != null) {
             for (int i = 0; i < listado.length; i++) {
+
+    static void listarContenido(File file){
+
+        String[] listado = file.list();
+        if (file.isDirectory()){
+            for (int i = 0; i < listado.length ; i++) {
+
                 System.out.println(listado[i]);
             }
         }
@@ -96,8 +104,6 @@ public class Main {
                     "5. Comprobar si un archivo o directorio existe en la ruta proporcionada.\n" +
                     "6. Listar el contenido de un directorio\n" +
                     "7. Salir del programa\n");
-
-
             try {
                 int op = scanner.nextInt();
                 scanner.nextLine();
@@ -144,7 +150,5 @@ public class Main {
             } catch (InputMismatchException e){
                 System.out.println("Pon un comando válido joder");
                 return;
-            }
-        }
-    }
-}
+  
+    
